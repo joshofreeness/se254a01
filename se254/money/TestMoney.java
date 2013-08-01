@@ -112,10 +112,17 @@ public class TestMoney extends TestCase {
 	}
     }
 
-
-
-
-
+	/**
+	*Test values of zero as input, could reveal error depending on implimentation
+	**/
+    public void testZeroValues(){
+	Money money = new Money();
+	Money money1 = new Money(0,0);
+	Money money2 = new Money(0,0,0);
+	assertEquals("$0.00", money.toString());
+	assertEquals("$0.00", money1.toString());
+	assertEquals("$0.00", money2.toString());
+	}
 
 
     /**

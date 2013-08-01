@@ -1,77 +1,77 @@
-Thu Aug 1 13:07:43 NZST 2013
+Thu Aug 1 13:26:05 NZST 2013
 Starting tests
 Testing good.jar
-.........
+..........
 Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badA.jar
-.........
-Time: 0.002
+..........
+Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badB.jar
-.........
+..........
 Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badC.jar
-.........
+..........
 Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badD.jar
-.........
-Time: 0.003
+..........
+Time: 0.002
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badE.jar
-....F.....
-Time: 0.004
+.....F.....
+Time: 0.003
 There was 1 failure:
-1) testCompilerSingleNegativeError(se254.money.TestMoney)junit.framework.AssertionFailedError: should have thrown exception
-	at se254.money.TestMoney.testCompilerSingleNegativeError(TestMoney.java:37)
+1) testConstructorSingleNegativeError(se254.money.TestMoney)junit.framework.AssertionFailedError: should have thrown exception
+	at se254.money.TestMoney.testConstructorSingleNegativeError(TestMoney.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at se254.money.TestMoney.main(TestMoney.java:97)
+	at se254.money.TestMoney.main(TestMoney.java:131)
 
 FAILURES!!!
-Tests run: 9,  Failures: 1,  Errors: 0
+Tests run: 10,  Failures: 1,  Errors: 0
 
 Testing badF.jar
-.........
+..........
 Time: 0.002
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badG.jar
-.........
+..........
 Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badH.jar
-.........
+..........
 Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badI.jar
-.........
+..........
 Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Testing badJ.jar
-.........
-Time: 0.002
+..........
+Time: 0.003
 
-OK (9 tests)
+OK (10 tests)
 
 Done!
