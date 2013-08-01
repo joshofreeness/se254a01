@@ -2,7 +2,7 @@
 echo "Compiling..."
 javac -cp .:junit.jar:good.jar se254/money/TestMoney.java
 echo "... done!"
-echo $(date) |tee testresults.txt
+echo date |tee testresults.txt
 echo "Starting tests" | tee -a testresults.txt
 
 for testName in "good.jar" "badA.jar" "badB.jar" "badC.jar" "badD.jar" \
