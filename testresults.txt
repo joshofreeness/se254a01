@@ -1,0 +1,76 @@
+Starting tests
+Testing good.jar
+.........
+Time: 0.003
+
+OK (9 tests)
+
+Testing badA.jar
+.........
+Time: 0.002
+
+OK (9 tests)
+
+Testing badB.jar
+.........
+Time: 0.003
+
+OK (9 tests)
+
+Testing badC.jar
+.........
+Time: 0.002
+
+OK (9 tests)
+
+Testing badD.jar
+.........
+Time: 0.002
+
+OK (9 tests)
+
+Testing badE.jar
+....F.....
+Time: 0.003
+There was 1 failure:
+1) testCompilerSingleNegativeError(se254.money.TestMoney)junit.framework.AssertionFailedError: should have thrown exception
+	at se254.money.TestMoney.testCompilerSingleNegativeError(TestMoney.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at se254.money.TestMoney.main(TestMoney.java:93)
+
+FAILURES!!!
+Tests run: 9,  Failures: 1,  Errors: 0
+
+Testing badF.jar
+.........
+Time: 0.002
+
+OK (9 tests)
+
+Testing badG.jar
+.........
+Time: 0.003
+
+OK (9 tests)
+
+Testing badH.jar
+.........
+Time: 0.002
+
+OK (9 tests)
+
+Testing badI.jar
+.........
+Time: 0.002
+
+OK (9 tests)
+
+Testing badJ.jar
+.........
+Time: 0.003
+
+OK (9 tests)
+
+Done!
