@@ -125,6 +125,69 @@ public class TestMoney extends TestCase {
 	}
 
 
+    public void testCompareToLessThan(){
+	Money money = new Money(3, 50);
+	Money money1 = new Money(3, 45, 32);
+	assertEquals(-1, money.compareTo(new Money(5,23)));
+	assertEquals(-1, money.compareTo(new Money(5,23, 13)));
+	
+    }
+
+    public void testCompareToGeaterThan(){
+	Money money = new Money(9, 90);
+	Money money1 = new Money(10, 32, 15);
+	assertEquals(1, money.compareTo(new Money(5,50)));
+	assertEquals(1, money1.compareTo(new Money(5,50, 75)));
+    }
+
+    public void testCompareToEqual(){
+	Money money = new Money(9, 70);
+	Money money1 = new Money(10,30,45);
+	assertEquals(0, money.compareTo(new Money(9,70)));
+	assertEquals(0, money1.compareTo(new Money(10,30,45)));
+    }
+
+    public void testCompareToZeroEqual(){
+	Money money = new Money();
+	assertEquals(0, money.compareTo(new Money()));
+    }
+
+    public void testCompareToLessThanZero(){
+	Money money = new Money();
+	assertEquals(-1, money.compareTo(new Money(3,15)));
+	assertEquals(-1, money.compareTo(new Money(3,15,45)));
+    }
+
+    public void testCompareToGreaterThanZero(){
+	Money money = new Money();
+	assertEquals(1, money.compareTo(new Money(-5,23)));
+	assertEquals(1, money.compareTo(new Money(-5,23,98)));
+    }
+
+
+    public void testCompareToNegativeLessThan(){
+	Money money = new Money(-30, 50);
+	Money money1 = new Money(-25,13,45);
+	assertEquals(-1, money.compareTo(new Money(-8,25)));
+	assertEquals(-1, money1.compareTo(new Money(-8,25,73)));
+    }
+
+    public void testCompareNegativeToGeaterThan(){
+	Money money = new Money(-50, 50);
+	Money money1 = new Money(-49,99,99);
+	assertEquals(1, money.compareTo(new Money(-75, 37)));
+	assertEquals(1, money1.compareTo(new Money(-75,38,01)));
+    }
+
+    public void testCompareToNegativeEqual(){
+	Money money = new Money(-8,30);
+	assertEquals(0, money.compareTo(new Money(-8,30)));
+    }
+
+
+
+
+
     /**
      * DO NOT DELETE THIS
      * This is needed for the automatic marking process.
