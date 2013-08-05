@@ -251,7 +251,49 @@ public class TestMoney extends TestCase {
 	assertEquals("$0.00",moneyFin2.toString());
     }
 
+  public void testAddNegatives(){
+	Money money = new Money(-4,60);
+	Money money1 = new Money(-3,50);
+	Money moneyZ = new Money();
+	Money moneyP = new Money(13,75);
+	Money moneyFin1 = money.add(money1);
+	Money moneyFin2 = money.add(moneyZ);
+	Money moneyFin3 = moneyZ.add(money1);
+	Money moneyFin4 = money.add(moneyP);
+	assertEquals("-$8.10",moneyFin1.toString());
+	assertEquals("-$4.60",moneyFin2.toString());
+	assertEquals("-$3.50",moneyFin3.toString());
+	assertEquals("$9.15",moneyFin4.toString());
+    }
 
+
+//Test Equals-------------------------------------------------
+
+
+    public void testEqualsPositive(){
+	Money money = new Money(3, 17);
+	Money money1 = new Money(3, 17);
+	assertTrue(money.equals(money1));
+    }
+
+    public void testEqualsNegative(){
+	Money money = new Money(-4,32);
+	Money money1 = new Money(-4,32);
+	assertTrue(money.equals(money1));
+    }
+
+    public void testEqualsZero(){
+	Money money = new Money(0,00);
+	Money money1 = new Money();
+	assertTrue(money.equals(money1));
+    }
+
+     public void testEqualsNull(){
+	Money money = new Money(0,00);
+	Money money1 = null;
+	assertFalse(money.equals(money1));
+    
+    }
 
 
 
