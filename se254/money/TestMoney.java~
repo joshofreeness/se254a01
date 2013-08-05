@@ -35,6 +35,13 @@ public class TestMoney extends TestCase {
 	assertEquals("-$3.17", money.toString());
     }
 
+    public void testConstructorNegativeNumberAfterFirst(){
+	Money money = new Money(0,-23);
+	assertEquals("-$0.23", money.toString());
+	Money money1 = new Money(0,00,-13);
+	assertEquals("-$0.0013", money1.toString());
+    }
+
 	
 	/**
 	*Check the first type of error that can occur and should be 
@@ -182,7 +189,60 @@ public class TestMoney extends TestCase {
     public void testCompareToNegativeEqual(){
 	Money money = new Money(-8,30);
 	assertEquals(0, money.compareTo(new Money(-8,30)));
+	assertEquals(0, money.compareTo(new Money(-8,30, 00)));
     }
+
+    public void testMultiplyPositive(){
+	Money money = new Money(3,00);
+	Money money1 = money.multiply(2);
+	assertEquals("$6.00",money1.toString());
+    }
+
+    public void testMultiplyPositiveDecimal(){
+	Money money = new Money(3,00);
+	Money money1 = money.multiply(4.5);
+	assertEquals("$13.50",money1.toString());
+    }
+
+   public void testMultiplyPositiveRoundUp(){
+	Money money = new Money(4,55,32);
+	Money money1 = money.multiply(1.02);
+	assertEquals("$4.6443",money1.toString());
+    }
+
+  public void testMultiplyPositiveRoundDown(){
+	Money money = new Money(7,56,18);
+	Money money1 = money.multiply(1.01);
+	assertEquals("$7.6374",money1.toString());
+    }
+
+  public void testAddNull(){
+	Money money = new Money(7,60);
+	Money money1 = null;
+	try{
+	    Money money2 =money.add(money1);
+	    fail("Should have failed as Null was passed");
+	}catch (IllegalArgumentException e){
+	}
+    }
+
+  public void testAddPositives(){
+	Money money = new Money(4,60);
+	Money money1 = new Money(3,50);
+	Money moneyFin = money.add(money1);
+	assertEquals("$8.10",moneyFin.toString());
+    }
+
+
+  public void testAddZero(){
+	Money moneyZ = new Money();
+	Money money = new Money(7,60);
+	Money moneyFin1 = money.add(moneyZ);
+	Money moneyFin2 = moneyZ.add(moneyZ);
+	assertEquals("$7.60",moneyFin1.toString());
+	assertEquals("$0.00",moneyFin2.toString());
+    }
+
 
 
 

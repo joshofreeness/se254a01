@@ -1,91 +1,109 @@
-Sat Aug 3 14:44:55 NZST 2013
+Mon Aug 5 17:06:58 NZST 2013
 Starting tests
 Testing good.jar
-...................
-Time: 0.003
+...........................
+Time: 0.004
 
-OK (19 tests)
+OK (27 tests)
 
 Testing badA.jar
-...................
-Time: 0.003
+...........................
+Time: 0.004
 
-OK (19 tests)
+OK (27 tests)
 
 Testing badB.jar
-...................
-Time: 0.002
+...........................
+Time: 0.004
 
-OK (19 tests)
+OK (27 tests)
 
 Testing badC.jar
-...................
-Time: 0.002
+.....E......................
+Time: 0.004
+There was 1 error:
+1) testConstructorNegativeNumberAfterFirst(se254.money.TestMoney)java.lang.IllegalArgumentException: Invalid: negative after non-zero
+	at se254.money.Money.<init>(Money.java:120)
+	at se254.money.Money.<init>(Money.java:54)
+	at se254.money.TestMoney.testConstructorNegativeNumberAfterFirst(TestMoney.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at se254.money.TestMoney.main(TestMoney.java:256)
 
-OK (19 tests)
+FAILURES!!!
+Tests run: 27,  Failures: 0,  Errors: 1
 
 Testing badD.jar
-...................
-Time: 0.002
+...........................
+Time: 0.004
 
-OK (19 tests)
+OK (27 tests)
 
 Testing badE.jar
-.....F..............
+......F.....................
 Time: 0.004
 There was 1 failure:
 1) testConstructorSingleNegativeError(se254.money.TestMoney)junit.framework.AssertionFailedError: should have thrown exception
-	at se254.money.TestMoney.testConstructorSingleNegativeError(TestMoney.java:46)
+	at se254.money.TestMoney.testConstructorSingleNegativeError(TestMoney.java:53)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at se254.money.TestMoney.main(TestMoney.java:197)
+	at se254.money.TestMoney.main(TestMoney.java:256)
 
 FAILURES!!!
-Tests run: 19,  Failures: 1,  Errors: 0
+Tests run: 27,  Failures: 1,  Errors: 0
 
 Testing badF.jar
-...................
-Time: 0.003
+...........................
+Time: 0.004
 
-OK (19 tests)
+OK (27 tests)
 
 Testing badG.jar
-...................
+...........................
 Time: 0.003
 
-OK (19 tests)
+OK (27 tests)
 
 Testing badH.jar
-.................F.F.
+..................F.F........
 Time: 0.004
 There were 2 failures:
 1) testCompareToNegativeLessThan(se254.money.TestMoney)junit.framework.AssertionFailedError: expected:<-1> but was:<1>
-	at se254.money.TestMoney.testCompareToNegativeLessThan(TestMoney.java:171)
+	at se254.money.TestMoney.testCompareToNegativeLessThan(TestMoney.java:178)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at se254.money.TestMoney.main(TestMoney.java:197)
+	at se254.money.TestMoney.main(TestMoney.java:256)
 2) testCompareNegativeToGeaterThan(se254.money.TestMoney)junit.framework.AssertionFailedError: expected:<1> but was:<-1>
-	at se254.money.TestMoney.testCompareNegativeToGeaterThan(TestMoney.java:178)
+	at se254.money.TestMoney.testCompareNegativeToGeaterThan(TestMoney.java:185)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at se254.money.TestMoney.main(TestMoney.java:197)
+	at se254.money.TestMoney.main(TestMoney.java:256)
 
 FAILURES!!!
-Tests run: 19,  Failures: 2,  Errors: 0
+Tests run: 27,  Failures: 2,  Errors: 0
 
 Testing badI.jar
-...................
+.......................F....
 Time: 0.003
+There was 1 failure:
+1) testMultiplyPositiveRoundUp(se254.money.TestMoney)junit.framework.ComparisonFailure: expected:<...3> but was:<...2>
+	at se254.money.TestMoney.testMultiplyPositiveRoundUp(TestMoney.java:210)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at se254.money.TestMoney.main(TestMoney.java:256)
 
-OK (19 tests)
+FAILURES!!!
+Tests run: 27,  Failures: 1,  Errors: 0
 
 Testing badJ.jar
-...................
+...........................
 Time: 0.003
 
-OK (19 tests)
+OK (27 tests)
 
 Done!
