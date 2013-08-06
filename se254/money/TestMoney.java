@@ -26,7 +26,11 @@ public class TestMoney extends TestCase {
 	**/
     public void testConstructorPositiveNumber(){
 	Money money = new Money(5, 38);
+	Money money1 = new Money(0,13);
+	Money money2 = new Money(0,00,25);
 	assertEquals("$5.38", money.toString());
+	assertEquals("$0.13", money1.toString());
+	assertEquals("$0.0025", money2.toString());
     }
 
 	/**
@@ -84,8 +88,8 @@ public class TestMoney extends TestCase {
 	*Check 100ths section with negative numbers
 	**/
     public void testConstructorNegativeNumberHundredths(){
-	Money money = new Money(-23, 17, 45);
-	assertEquals("-$23.1745", money.toString());
+	Money money = new Money(-4, 15, 12);
+	assertEquals("-$4.1512", money.toString());
     }
 	
 	/**
@@ -134,7 +138,7 @@ public class TestMoney extends TestCase {
 	}
 
 
-//Test compare-----------------------------------------
+//Test compareTo-----------------------------------------
 
     public void testCompareToLessThan(){
 	Money money = new Money(3, 50);
@@ -222,6 +226,24 @@ public class TestMoney extends TestCase {
 	assertEquals("$7.6374",money1.toString());
     }
 
+   public void testMultiplyNegativeRoundUp(){
+	Money money = new Money(-4,55,32);
+	Money money1 = money.multiply(1.02);
+	assertEquals("-$4.6443",money1.toString());
+    }
+
+  public void testMultiplyNegativeRoundDown(){
+	Money money = new Money(-7,56,18);
+	Money money1 = money.multiply(1.01);
+	assertEquals("-$7.6374",money1.toString());
+    }
+
+  public void testMultiplyRoundHalfwayMark(){
+	Money money = new Money(7,56,18);
+	Money money1 = money.multiply(1.01);
+	assertEquals("$7.6374",money1.toString());
+    }
+
 
 //Test add ---------------------------------------------------------
   public void testAddNull(){
@@ -265,6 +287,41 @@ public class TestMoney extends TestCase {
 	assertEquals("-$3.50",moneyFin3.toString());
 	assertEquals("$9.15",moneyFin4.toString());
     }
+
+
+    public void testAddThousandthsPositive(){
+	Money money1 = new Money();
+	Money money2 = new Money(0,00,13);
+	Money money3 = new Money(3,45,23);
+	Money moneyFin1 = money1.add(money2);
+	Money moneyFin2 = money2.add(money3);
+	assertEquals("$0.0013",moneyFin1.toString());
+	assertEquals("$3.4536",moneyFin2.toString());
+
+    }
+
+    public void testAddThousandthsNegativeZero(){
+	Money money1 = new Money();
+	Money money3 = new Money(-4,15,12);
+	Money moneyFin = money3.add(money1);
+	Money moneyFin1 = money1.add(money3);
+	assertEquals("-$4.1512",moneyFin.toString());
+	assertEquals("-$4.1512",moneyFin.toString());
+
+    }
+
+    public void testAddThousandthsNegativePositive(){
+	Money money2 = new Money(3,45,23);
+	Money money3 = new Money(-4,15,12);
+	Money moneyFin = money2.add(money3);
+	Money moneyFin1 = money3.add(money2);
+	assertEquals("-$0.6989",moneyFin.toString());
+	assertEquals("-$0.6989",moneyFin1.toString());
+
+    }
+	
+	
+
 
 
 //Test Equals-------------------------------------------------
