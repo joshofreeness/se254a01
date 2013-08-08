@@ -123,6 +123,11 @@ public class TestMoney extends TestCase {
 		fail("should have thrown exception");
 	}catch (IllegalArgumentException e){
 	}
+	try{
+		Money money = new Money(5, -21,-13);
+		fail("should have thrown exception");
+	}catch (IllegalArgumentException e){
+	}
     }
 
 	/**
@@ -137,6 +142,23 @@ public class TestMoney extends TestCase {
 	assertEquals("$0.00", money2.toString());
 	}
 
+    public void testConstructorOutOfRange(){
+	try{
+		Money money = new Money(5, 211);
+		fail("should have thrown exception");
+	}catch (IllegalArgumentException e){
+	}
+	try{
+		Money money = new Money(9, 3,112);
+		fail("should have thrown exception");
+	}catch (IllegalArgumentException e){
+	}
+	try{
+		Money money = new Money(0, 231,112);
+		fail("should have thrown exception");
+	}catch (IllegalArgumentException e){
+	}
+    }
 
 //Test compareTo-----------------------------------------
 
@@ -207,6 +229,11 @@ public class TestMoney extends TestCase {
 	Money money1 = money.multiply(2);
 	assertEquals("$6.00",money1.toString());
     }
+    public void testMultiplyNegative(){
+	Money money = new Money(3,00);
+	Money money1 = money.multiply(-2);
+	assertEquals("-$6.00",money1.toString());
+    }
 
     public void testMultiplyPositiveDecimal(){
 	Money money = new Money(3,00);
@@ -238,10 +265,16 @@ public class TestMoney extends TestCase {
 	assertEquals("-$7.6374",money1.toString());
     }
 
-  public void testMultiplyRoundHalfwayMark(){
-	Money money = new Money(7,56,18);
-	Money money1 = money.multiply(1.01);
-	assertEquals("$7.6374",money1.toString());
+  public void testMultiplyPositiveRoundHalfwayMark(){
+	Money money = new Money(7,00,01);
+	Money money1 = money.multiply(1.000022);
+	assertEquals("$7.0003",money1.toString());
+    }
+
+  public void testMultiplyNegativeRoundHalfwayMark(){
+	Money money = new Money(7,00,01);
+	Money money1 = money.multiply(-1.000022);
+	assertEquals("-$7.0003",money1.toString());
     }
 
 
@@ -319,6 +352,20 @@ public class TestMoney extends TestCase {
 	assertEquals("-$0.6989",moneyFin1.toString());
 
     }
+    public void testAddCornerCases(){
+	Money money1 = new Money(9,99,99);
+	Money money2 = new Money(0,00,01);
+	Money money3 = new Money(-9,99,99);
+	Money money4 = new Money(0,00,-01);
+	Money moneyFin1 = money1.add(money2);
+	Money moneyFin2 = money4.add(money3);
+	Money moneyFin3 = money3.add(money2);
+	Money moneyFin4 = money1.add(money3);
+	assertEquals("$10.00",moneyFin1.toString());
+	assertEquals("-$10.00",moneyFin2.toString());
+	assertEquals("-$9.9998",moneyFin3.toString());
+	assertEquals("$0.00",moneyFin4.toString());
+    }
 	
 	
 
@@ -352,8 +399,19 @@ public class TestMoney extends TestCase {
     
     }
 
+    public void testEqualPositiveNegative(){
+	Money money1 = new Money(13,75);
+	Money money2 = new Money(-13,75);
+	assertFalse(money1.equals(money2));
+	assertFalse(money2.equals(money1));
+
+    }
 
 
+
+
+
+//----------Finished-----------------------------------------
 
     /**
      * DO NOT DELETE THIS
