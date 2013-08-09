@@ -15,7 +15,10 @@ public class TestMoney extends TestCase {
 	/**
 	* Testing no arguments to see if constructor
 	*works in that scenario
-	* -----NOTE: Tests of the constructor assume that toString 			works correctly--------
+	* -----NOTE: Tests of the constructor assume that toString 
+	*works correctly but by asuming that I am essentially 
+	*testing them at the same time. Any errors that come up will 
+	*still be a failure of the program--------
 	**/
     public void testConstructorNoArgs(){
 	Money money = new Money();
